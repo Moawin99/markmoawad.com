@@ -1,0 +1,44 @@
+---
+import MainLayout from '../layouts/main-layout.astro';
+import HomeBlock from '../components/HomeBlock';
+
+const blocks = [
+	{
+		title: 'Home',
+		subTitle: 'This literally takes you to the same page you\'re one right now',
+		fullWidth: false
+	},
+	{
+		title: 'About me',
+		subTitle: 'My very interesting life story',
+		fullWidth: false
+	},
+	{
+		title: 'Projects',
+		subTitle: 'My creations 😈',
+		fullWidth: true
+	},
+	{
+		title: 'Collections',
+		subTitle: 'Some of the things I collect that I think make me cool',
+		fullWidth: false
+	},
+	{
+		title: 'Media',
+		subTitle: 'The media I consume for entertainment, personal growth, and ✨Knowledge✨',
+		fullWidth: false
+	},
+	{
+		title: 'Resume',
+		subTitle: 'The piece of paper that defines my career',
+		fullWidth: true
+	}
+]
+---
+<MainLayout>
+	<div class="max-w-6xl mx-auto">
+		<div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			{blocks.map(block => <HomeBlock {...block} />)}
+		</div>
+	</div>
+</MainLayout>
