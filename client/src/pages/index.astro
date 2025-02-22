@@ -5,40 +5,53 @@ import HomeBlock from '../components/HomeBlock';
 const blocks = [
 	{
 		title: 'Home',
-		subTitle: 'This literally takes you to the same page you\'re one right now',
+		description: 'This literally takes you to the same page you\'re one right now',
+		subTitle: '🫵🏽 are here',
 		fullWidth: false
 	},
 	{
 		title: 'About me',
-		subTitle: 'My very interesting life story',
+		description: 'My very interesting life story',
+		subTitle: '✨Personality✨',
 		fullWidth: false
 	},
 	{
 		title: 'Projects',
-		subTitle: 'My creations 😈',
+		description: 'My creations 😈',
+		subTitle: 'Experience 🧑🏽‍💻',
 		fullWidth: true
 	},
 	{
 		title: 'Collections',
-		subTitle: 'Some of the things I collect that I think make me cool',
-		fullWidth: false
+		description: 'Some of the things I collect that I think make me cool',
+		subTitle: '✨Personality✨',
+		fullWidth: true
 	},
 	{
 		title: 'Media',
-		subTitle: 'The media I consume for entertainment, personal growth, and ✨Knowledge✨',
+		description: 'The media I consume for entertainment, personal growth, and ✨Knowledge✨',
+		subTitle: '✨Personality✨',
 		fullWidth: false
 	},
 	{
 		title: 'Resume',
-		subTitle: 'The piece of paper that defines my career',
-		fullWidth: true
+		description: 'The piece of paper that defines my career',
+		subTitle: 'Experience 🧑🏽‍💻',
+		fullWidth: false
 	}
 ]
+
+
 ---
 <MainLayout>
-	<div class="max-w-6xl mx-auto">
-		<div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{blocks.map(block => <HomeBlock {...block} />)}
+	<div class="grid grid-col-2 gap-6 h-full">
+		<div class="box-border flex flex-row  max-w-6xl mx-auto pt-6">
+			<div class="box-border w-1/2 grid grid-col-1 md:grid-cols-2 lg:grid-cols-2 p-6 gap-4 grid-rows-3">
+				{blocks.splice(0, 3).map((block) => <HomeBlock title={block.title} description={block.description} subTitle={block.subTitle} fullWidth={block.fullWidth} />)}
+			</div>
+			<div class="box-border w-1/2 grid grid-col-1 md:grid-cols-2 lg:grid-cols-2 p-6 gap-6 grid-rows-3">
+				{blocks.map((block) => <HomeBlock title={block.title} description={block.description} subTitle={block.subTitle} fullWidth={block.fullWidth} />)}
+			</div>
 		</div>
 	</div>
 </MainLayout>

@@ -1,16 +1,23 @@
+import pyramid from '../assets/Pyramid.svg'
+
 export interface HomeBlockProps {
     title: string;
-    subTitle: string;
+    description: string;
     fullWidth?: boolean;
+    subTitle: string;
 }
 
-const HomeBlock = ({ title, subTitle, fullWidth }: HomeBlockProps) => {
+const HomeBlock = ({ title, description, fullWidth, subTitle }: HomeBlockProps) => {
     return (
-        <div className={`p-6 bg-white rounded-xl shadow-sm ${fullWidth ? 'col-span-2' : 'col-span-1'}
-        md:col-span-${fullWidth ? 'full': '1'} lg:col-span-${fullWidth ? 'full': '1'}`}>
+        <div className={`flex flex-col justify-between p-6 bg-white rounded-xl shadow-sm ${fullWidth ? 'col-span-2' : 'col-span-1'}
+        md:col-span-${fullWidth ? 'full': '1'} lg:col-span-${fullWidth ? 'full': '1'} ${fullWidth ? 'row-span-2' : 'row-span-1'}`}>
+            <div className="box-border flex flex-row justify-between w-full pr-3">
+                <h3>{subTitle}</h3>
+                <img src={pyramid} alt="pyramid" />
+            </div>
             <div className="flex justify-between items-start flex-col">
-                <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                <p className="text-gray-600 text-sm line-clamp-2">{subTitle}</p>
+                <h1 className="text-4xl font-semibold mb-2">{title}</h1>
+                <p className="text-gray-600 text-sm line-clamp-2">{description}</p>
             </div>
         </div>
     );
