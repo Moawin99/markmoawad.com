@@ -44,12 +44,12 @@ const blocks = [
 
 ---
 <MainLayout>
-	<div class="grid grid-col-2 sm:grid-cols-1 md:grid-cols-1 gap-3 h-full">
-		<div class="box-border flex sm:flex-col md:flex-col lg:flex-row mx-auto p-8 items-center">
-			<div class="box-border w-1/2 h-full grid grid-cols-2 grid-rows-3 p-6 gap-3">
+	<div class="grid grid-col-1 sm:grid-cols-1 md:grid-cols-2 gap-3 h-full w-full">
+		<div class="box-border w-full flex flex-col md:flex-row mx-auto p-8 items-center md:col-span-2">
+			<div class="box-border w-full md:w-1/2 h-full grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-3 p-6 gap-3">
 				{blocks.splice(0, 3).map((block) => <HomeBlock title={block.title} description={block.description} subTitle={block.subTitle} fullWidth={block.fullWidth} />)}
 			</div>
-			<div class="box-border w-1/2 h-full grid grid-cols-2 grid-rows-3 p-6 gap-3">
+			<div class="box-border w-full md:w-1/2 h-full grid grid-cols-1 grid-rows-1 md:grid-cols-2 md:grid-rows-3 p-6 gap-3">
 				{blocks.map((block) => <HomeBlock title={block.title} description={block.description} subTitle={block.subTitle} fullWidth={block.fullWidth} />)}
 			</div>
 		</div>
