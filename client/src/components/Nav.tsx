@@ -1,12 +1,11 @@
-import { motion } from 'framer-motion'
-export const Nav = () => {
+export default () => {
     return (
-        <nav className="flex mx-8 mb-24 pt-12 pb-6 justify-between align-middle flex-row">
+        <nav className="flex pt-6 pl-12 pr-12 pb-6 sm:w-1/2 sm:pl-4 sm:pr-4 justify-between self-center flex-row">
             <a href="/">Home</a>
-            <a href="/">Projects</a>
-            <a href="/">Resume</a>
-            <a href="/">Media</a>
-            <a href="/">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/resume">Resume</a>
+            <a href="/media">Media</a>
+            <a href="/about">About</a>
         </nav>
     );
 };
